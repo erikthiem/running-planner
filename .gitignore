@@ -13,3 +13,5 @@ tests/.coverage*
 build/
 tests/report/
 tests/screenshots/
+.env
+db.sqlite3
