@@ -25,7 +25,10 @@ SECRET_KEY = 'django-insecure-rtypl&vq$gw#cc#2ag3*5fdn2-amngr)@&@^xzi2rq3@plj8)4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'running-planner-production.up.railway.app',
+    '127.0.0.1'
+]
 
 
 # Application definition
