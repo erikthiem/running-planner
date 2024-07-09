@@ -2,7 +2,7 @@
 <ul>
     {% for run in all_runs %}
         <li>
-            {{ run }}
+            <a href="{% url 'runs:detail' run.id %}">{{ run }}</a>
         </li>
     {% endfor %}
 </ul>

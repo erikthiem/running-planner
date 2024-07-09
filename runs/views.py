@@ -9,3 +9,7 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         return Run.objects.order_by('-start_time')
+
+class DetailView(generic.DetailView):
+    model = Run
+    template_name = 'runs/detail.html'
