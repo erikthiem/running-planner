@@ -1,0 +1,8 @@
+<h1>List of all runs</h1>
+<ul>
+    {% for run in all_runs %}
+        <li>
+            <a href="{% url 'runs:detail' run.id %}">{{ run }}</a>
+        </li>
+    {% endfor %}
+</ul>
