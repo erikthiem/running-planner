@@ -6,6 +6,10 @@ from django.views import generic
 from runs.forms import NewRunForm
 from runs.models import Run
 
+from rest_framework import viewsets
+
+from runs.serializers import RunSerializer
+
 class IndexView(generic.ListView):
     template_name = 'runs/index.html'
 
@@ -34,3 +38,10 @@ def new_run(request):
         form = NewRunForm()
     
     return render(request, "runs/new.html", {"form": form})
+
+class RunViewSet(viewsets.ModelViewSet):
+    queryset = Run.objects.order_by('-start_time')
+    serializer_class = RunSerializer
+
+    def get_queryset(self):
+        return Run.objects.filter(user_id=self.request.user.id).order_by('-start_time')
