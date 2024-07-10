@@ -1,9 +1,10 @@
+from django.utils import timezone
 from django.conf import settings
 from django.db import models
 
 class Run(models.Model):
     distance_miles = models.FloatField()
-    start_time = models.DateTimeField()
+    start_time = models.DateTimeField(default=timezone.now)
 
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 

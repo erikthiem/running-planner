@@ -8,5 +8,8 @@
             <a href="{% url 'runs:detail' run.id %}">{{ run }}</a>
         </li>
     {% endfor %}
+    <li>
+      <a href="{% url 'runs:new' %}">Add New Run</a>
+    </li>
 </ul>
 {% endblock %}
